@@ -8,6 +8,7 @@
     "tsc": "npm run clear_types && tsc",
     "jest": "jest",
     "test": "standardx && jest",
+    "standardx:fix": "standardx --fix",
     "prepublish": "npm run tsc && standardx && jest",
     "patch": "npm run prepublish && npm version patch && npm publish",
     "minor": "npm run prepublish && npm version minor && npm publish",
