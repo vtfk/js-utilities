@@ -28,4 +28,12 @@ declare class Utilities {
      * @param {String[]} keys
      */
     static removeKeys(object: object, keys: string[]): any;
+    /**
+     * Get only unique key values from an array with items
+     * @param {Array} array Array of items to get unique values from
+     * @param {String} key Key on item to get unique values for. Will return array with string values only
+     * @param {Array} keys Array of which item keys to get unique items for. Will return array with items containing keys
+     * @returns {Array} Array of unique values
+     */
+    static uniqueValues(array: any[], key: string, keys: any[]): any[];
 }
