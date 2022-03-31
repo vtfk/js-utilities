@@ -23,6 +23,13 @@
     "Utilities"
   ],
   "author": "Karl-Einar Bergstrøm",
+  "contributors": [
+    {
+      "name": "Rune Moskvil Lyngås",
+      "email": "rune.moskvil.lyngaas@vtfk.no",
+      "url": "https://github.com/runely"
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/vtfk/js-utilities/issues"
