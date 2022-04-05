@@ -1,4 +1,4 @@
-const { uniqueValues } = require('../../index')
+const { uniqueValues } = require('../../cjs')
 
 const array = [
   {

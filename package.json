@@ -2,7 +2,8 @@
   "name": "@vtfk/utilities",
   "version": "1.2.0",
   "description": "A collection of uncategorized javascript functionality used in multiple projects",
-  "main": "index.js",
+  "main": "cjs.js",
+  "module": "es.js",
   "scripts": {
     "clear_types": "del-cli \"**/*.d.ts\" \"!node_modules\"",
     "tsc": "npm run clear_types && tsc",
