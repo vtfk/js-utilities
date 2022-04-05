@@ -9,31 +9,31 @@ const DIVISIONS = [
 ]
 
 /**
+ * RelativeDateOptions
+ * @typedef {Object} RelativeDateOptions
+ * @property {Date} toDate Date object to format relative date from
+ * @property {Date} [fromDate] Date object to be starting point (Default = new Date())
+ * @property {String} [locale] Locale to format date into (Default = 'en')
+ * @property {RelativeTimeFormatOptions} [options] RelativeTimeFormat options
+ */
+
+/**
  * RelativeTimeFormat options
  * @typedef {Object} RelativeTimeFormatOptions
  * @property {"always"|"auto"} [numeric] "Always" use numeric values or "auto" choose value
  * @property {"long"|"short"|"narrow"} [style] "long" time style, "short" time style or "narrow" time style
  */
 
-/**
- * Format number into relative time
- * @param {String} locale Locale to format into - (Default = en)
- * @param {RelativeTimeFormatOptions} options RelativeTimeFormat options
- * @returns Formatted string
- */
 const getRelativeTimeFormatter = (locale, options) => {
   return new Intl.RelativeTimeFormat(locale, options)
 }
 
 /**
- * Formats the duratio between two dates into a relative time
- * @param {Date} toDate Date object to format relative date from
- * @param {Date} fromDate (optional) Date object to be starting point (Default = new Date())
- * @param {String} locale Locale to format date into
- * @param {Object} options RelativeTimeFormat options
+ * Formats the duration between two dates into a more readable, relative form
+ * @param {RelativeDateOptions} options RelativeDate options
  * @returns The formatted string
  */
-module.exports.formatRelativeDate = (toDate, fromDate = new Date(), locale = 'en', options = undefined) => {
+module.exports.formatRelativeDate = ({ toDate, fromDate = new Date(), locale = 'en', options = undefined }) => {
   if (toDate === null || toDate === undefined) throw new Error('Pass at least "toDate"')
 
   const FORMATTER = getRelativeTimeFormatter(locale, options)

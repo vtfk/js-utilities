@@ -36,4 +36,50 @@ declare class Utilities {
      * @returns {Array} Array of unique values
      */
     static uniqueValues(array: any[], key: string, keys: any[]): any[];
+    /**
+     * RelativeDateOptions
+     * @typedef {Object} RelativeDateOptions
+     * @property {Date} toDate Date object to format relative date from
+     * @property {Date} [fromDate] Date object to be starting point (Default = new Date())
+     * @property {String} [locale] Locale to format date into (Default = 'en')
+     * @property {RelativeTimeFormatOptions} [options] RelativeTimeFormat options
+     */
+    /**
+     * RelativeTimeFormat options
+     * @typedef {Object} RelativeTimeFormatOptions
+     * @property {"always"|"auto"} [numeric] "Always" use numeric values or "auto" choose value
+     * @property {"long"|"short"|"narrow"} [style] "long" time style, "short" time style or "narrow" time style
+     */
+    /**
+     * Formats the duration between two dates into a more readable, relative form
+     * @param {RelativeDateOptions} options RelativeDate options
+     * @returns The formatted string
+     */
+    static relativeDateFormat(options: {
+        /**
+         * Date object to format relative date from
+         */
+        toDate: Date;
+        /**
+         * Date object to be starting point (Default = new Date())
+         */
+        fromDate?: Date;
+        /**
+         * Locale to format date into (Default = 'en')
+         */
+        locale?: string;
+        /**
+         * RelativeTimeFormat options
+         */
+        options?: {
+            /**
+             * "Always" use numeric values or "auto" choose value
+             */
+            numeric?: "always" | "auto";
+            /**
+             * "long" time style, "short" time style or "narrow" time style
+             */
+            style?: "long" | "short" | "narrow";
+        };
+    }): string;
 }

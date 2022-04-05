@@ -1,4 +1,25 @@
-export function formatRelativeDate(toDate: Date, fromDate?: Date, locale?: string, options?: any): string;
+export function formatRelativeDate({ toDate, fromDate, locale, options }: RelativeDateOptions): string;
+/**
+ * RelativeDateOptions
+ */
+export type RelativeDateOptions = {
+    /**
+     * Date object to format relative date from
+     */
+    toDate: Date;
+    /**
+     * Date object to be starting point (Default = new Date())
+     */
+    fromDate?: Date;
+    /**
+     * Locale to format date into (Default = 'en')
+     */
+    locale?: string;
+    /**
+     * RelativeTimeFormat options
+     */
+    options?: RelativeTimeFormatOptions;
+};
 /**
  * RelativeTimeFormat options
  */
