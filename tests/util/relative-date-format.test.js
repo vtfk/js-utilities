@@ -52,4 +52,11 @@ describe('formatRelativeDate', () => {
       })
     })
   })
+
+  test('"toDate" and "fromDate" passed as ISO strings', () => {
+    const now = new Date()
+    const futureDate = new Date(new Date().setDate(now.getDate() + 7))
+    const formatted = formatRelativeDate({ toDate: now.toISOString(), fromDate: futureDate.toISOString() })
+    expect(['in 7 days', 'in 1 week', '1 week ago'].includes(formatted)).toBe(true)
+  })
 })

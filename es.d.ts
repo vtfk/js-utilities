@@ -6,13 +6,13 @@ declare const _exports: {
     uniqueValues(array: any[], key: string, keys: any[]): any[];
     relativeDateFormat(options: {
         /**
-         * Date object to format relative date from
+         * Date object or date ISO string to format relative date from
          */
-        toDate: Date;
+        toDate: string | Date;
         /**
-         * Date object to be starting point (Default = new Date())
+         * Date object or date ISO string to be starting point (Default = new Date())
          */
-        fromDate?: Date;
+        fromDate?: string | Date;
         /**
          * Locale to format date into (Default = 'en')
          */

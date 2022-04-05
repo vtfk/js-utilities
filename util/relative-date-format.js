@@ -11,8 +11,8 @@ const DIVISIONS = [
 /**
  * RelativeDateOptions
  * @typedef {Object} RelativeDateOptions
- * @property {Date} toDate Date object to format relative date from
- * @property {Date} [fromDate] Date object to be starting point (Default = new Date())
+ * @property {Date|String} toDate Date object or date ISO string to format relative date from
+ * @property {Date|String} [fromDate] Date object or date ISO string to be starting point (Default = new Date())
  * @property {String} [locale] Locale to format date into (Default = 'en')
  * @property {RelativeTimeFormatOptions} [options] RelativeTimeFormat options
  */
@@ -35,6 +35,12 @@ const getRelativeTimeFormatter = (locale, options) => {
  */
 module.exports.formatRelativeDate = ({ toDate, fromDate = new Date(), locale = 'en', options = undefined }) => {
   if (toDate === null || toDate === undefined) throw new Error('Pass at least "toDate"')
+  if (typeof toDate === 'string' && Date.parse(toDate) > 0) {
+    toDate = new Date(toDate)
+  }
+  if (typeof fromDate === 'string' && Date.parse(fromDate) > 0) {
+    fromDate = new Date(fromDate)
+  }
 
   const FORMATTER = getRelativeTimeFormatter(locale, options)
   let duration = (toDate - fromDate) / 1000

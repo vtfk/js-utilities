@@ -4,13 +4,13 @@ export function formatRelativeDate({ toDate, fromDate, locale, options }: Relati
  */
 export type RelativeDateOptions = {
     /**
-     * Date object to format relative date from
+     * Date object or date ISO string to format relative date from
      */
-    toDate: Date;
+    toDate: Date | string;
     /**
-     * Date object to be starting point (Default = new Date())
+     * Date object or date ISO string to be starting point (Default = new Date())
      */
-    fromDate?: Date;
+    fromDate?: Date | string;
     /**
      * Locale to format date into (Default = 'en')
      */

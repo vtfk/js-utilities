@@ -39,8 +39,8 @@ declare class Utilities {
     /**
      * RelativeDateOptions
      * @typedef {Object} RelativeDateOptions
-     * @property {Date} toDate Date object to format relative date from
-     * @property {Date} [fromDate] Date object to be starting point (Default = new Date())
+     * @property {Date|String} toDate Date object or date ISO string to format relative date from
+     * @property {Date|String} [fromDate] Date object or date ISO string to be starting point (Default = new Date())
      * @property {String} [locale] Locale to format date into (Default = 'en')
      * @property {RelativeTimeFormatOptions} [options] RelativeTimeFormat options
      */
@@ -57,13 +57,13 @@ declare class Utilities {
      */
     static relativeDateFormat(options: {
         /**
-         * Date object to format relative date from
+         * Date object or date ISO string to format relative date from
          */
-        toDate: Date;
+        toDate: Date | string;
         /**
-         * Date object to be starting point (Default = new Date())
+         * Date object or date ISO string to be starting point (Default = new Date())
          */
-        fromDate?: Date;
+        fromDate?: Date | string;
         /**
          * Locale to format date into (Default = 'en')
          */
