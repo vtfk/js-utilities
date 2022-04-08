@@ -3,7 +3,30 @@ declare const _exports: {
     decodeBase64(encodedString: string): string;
     createObjectWithOrderedKeys(obj: any, startProperties?: string[], endProperties?: string[]): any;
     removeKeys(object: any, keys: string[]): any;
-    uniqueValues(array: any[], key: string, keys: any[]): any[];
+    uniqueValues(options?: {
+        /**
+         * Array of items or values to get unique values from
+         */
+        array: any[];
+        /**
+         * Key on item to get unique values for.
+         *
+         * If this is not set we will assume "array" is a flat array with values only and based on that will return unique values
+         */
+        key?: string;
+        /**
+         * Array of which item keys to get unique items for.
+         *
+         * If this is not set this will return array with string values only.
+         *
+         * We will assume "array" contains object items.
+         *
+         * Requires "key" to be set
+         *
+         * Will return array with items containing keys.
+         */
+        keys?: any[];
+    }): any[];
     relativeDateFormat(options: {
         /**
          * Date object or date ISO string to format relative date from

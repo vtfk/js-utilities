@@ -22,13 +22,51 @@ declare class Utilities {
      */
     static removeKeys(object: object, keys: string[]): any;
     /**
+     * UniqueValuesOption
+     * @typedef {Object} UniqueValuesOptions
+     * @property {Array} array Array of items or values to get unique values from
+     * @property {String} [key] Key on item to get unique values for.
+     *
+     * If this is not set we will assume "array" is a flat array with values only and based on that will return unique values
+     * @property {Array} [keys] Array of which item keys to get unique items for.
+     *
+     * If this is not set this will return array with string values only.
+     *
+     * We will assume "array" contains object items.
+     *
+     * Requires "key" to be set
+     *
+     * Will return array with items containing keys.
+     */
+    /**
      * Get only unique key values from an array with items
-     * @param {Array} array Array of items to get unique values from
-     * @param {String} key Key on item to get unique values for. Will return array with string values only
-     * @param {Array} keys Array of which item keys to get unique items for. Will return array with items containing keys
+     * @param {UniqueValuesOptions} options UniqueValuesOptions
      * @returns {Array} Array of unique values
      */
-    static uniqueValues(array: any[], key: string, keys: any[]): any[];
+    static uniqueValues(options?: {
+        /**
+         * Array of items or values to get unique values from
+         */
+        array: any[];
+        /**
+         * Key on item to get unique values for.
+         *
+         * If this is not set we will assume "array" is a flat array with values only and based on that will return unique values
+         */
+        key?: string;
+        /**
+         * Array of which item keys to get unique items for.
+         *
+         * If this is not set this will return array with string values only.
+         *
+         * We will assume "array" contains object items.
+         *
+         * Requires "key" to be set
+         *
+         * Will return array with items containing keys.
+         */
+        keys?: any[];
+    }): any[];
     /**
      * RelativeDateOptions
      * @typedef {Object} RelativeDateOptions
