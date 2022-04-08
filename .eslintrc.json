@@ -7,6 +7,7 @@
     "ecmaVersion": 2018
   },
   "rules": {
+    "no-trailing-spaces": ["error", { "ignoreComments": true }],
     "no-extra-semi": 0,
     "semi": 0,
     "spaced-comment": ["error", "always", { "exceptions": ["/"] }],
