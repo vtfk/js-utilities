@@ -1,6 +1,6 @@
 {
   "name": "@vtfk/utilities",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A collection of uncategorized javascript functionality used in multiple projects",
   "main": "cjs.js",
   "module": "es.js",
