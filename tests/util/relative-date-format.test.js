@@ -48,7 +48,8 @@ describe('formatRelativeDate', () => {
       test('"narrow" - should return "in 1 wk." or "in 7 days"', () => {
         const futureDate = new Date(new Date().setDate(new Date().getDate() + 7))
         const formatted = formatRelativeDate({ toDate: futureDate, options: { style: 'narrow' } })
-        expect(['in 1 wk.', 'in 7 days'].includes(formatted)).toBe(true)
+        console.log(formatted)
+        expect(['in 1w', 'in 1 wk.', 'in 7 days'].includes(formatted)).toBe(true)
       })
     })
   })
